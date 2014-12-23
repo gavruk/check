@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Check</title>
+    <meta name="viewport" content="initial-scale=1">
+    <link rel="stylesheet" href="../lib/css/check.css">
+</head>
+<body>
+    <style>
+        .demo-container {
+            width: 100%;
+            margin: 50px auto;
+        }
+
+        form {
+            margin: 30px;
+        }
+        input {
+            width: 200px;
+            margin: 10px auto;
+            display: block;
+        }
+
+    </style>
+    <div class="demo-container">
+        <div class="check-wrapper"></div>
+
+        <div class="form-container active">
+            <form action="">
+                <input placeholder="Full Name" type="text" name="name">
+                <input placeholder="Order" type="text" name="order">
+                <input placeholder="Bank Name" type="text" name="bank-name">
+                <input placeholder="Routing number" type="text" name="routing-number">
+                <input placeholder="Account number" type="text" name="account-number">
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="../lib/js/check.js"></script>
+    <script>
+        $('.active form').check({
+          container: $('.check-wrapper'),
+          width: 350,
+          values: {
+            accountNumber: '&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;',
+            routingNumber: '&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;',
+            name: 'Your Name',
+            bankName: 'Your Bank',
+            order: '_________________________'
+          }
+        })
+    </script>
+</body>
+</html>

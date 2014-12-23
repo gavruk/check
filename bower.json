@@ -1,0 +1,29 @@
+{
+  "name": "check",
+  "version": "0.1.0",
+  "homepage": "https://github.com/gavruk/check",
+  "authors": [
+    "Sergey Gavruk <svgavruk@gmail.com>"
+  ],
+  "description": "Better check form.",
+  "main": [
+    "lib/js/check.js",
+    "lib/css/check.css"
+  ],
+  "keywords": [
+    "check",
+    "ach",
+    "form"
+  ],
+  "dependencies": {
+    "jquery": ">=1.5"
+  },
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "example",
+    "test",
+    "tests"
+  ]
+}

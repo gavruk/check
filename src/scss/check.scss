@@ -1,0 +1,214 @@
+@import "bourbon/dist/bourbon";
+@import "mixins";
+
+$check-width: 400px;
+$check-height: 200px;
+$check-border-radius: 5px;
+$check-fill-color: #3399CC;
+$check-font-family: "Helvetica Neue";
+$check-monospace-font-family: "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
+$check-font-color: black;
+$check-transition-time: 400ms;
+
+.check-container {
+  @include perspective(1000px);
+  width: $check-width;
+  max-width: 100%;
+  height: $check-height;
+  margin: auto;
+  z-index: 1;
+  position: relative;
+}
+
+.check {
+  font-family: $check-font-family;
+  line-height: 1;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-width: 315px;
+  border-radius: $check-border-radius;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+
+
+  & > *, & > *:before, & > *:after {
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+    font-family: inherit;
+  }
+
+  @include transform-style(preserve-3d);
+  @include transition(all $check-transition-time linear);
+
+  .front, .back {
+    @include backface-visibility(hidden);
+    @include transform-style(preserve-3d);
+    @include transition(all $check-transition-time linear);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    border-radius: $check-border-radius;
+    background: #DDD;
+    background-color: #FFF;
+    /*background-color: rgba(0, 0, 0, 0.5);*/
+
+    &:before {
+      @include transition(all $check-transition-time ease);
+      @include check-texture();
+      @include shape();
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border-radius: 5px;
+      opacity: 1;
+      @include transition(all $check-transition-time ease);
+    }
+
+    &:after {
+      @include shape();
+    }
+
+    .display {
+      color: $check-font-color;
+      font-weight: normal;
+      opacity: 0.5;
+      @include transition(opacity $check-transition-time linear);
+      &.focused {
+        opacity: 1;
+        font-weight: 700;
+        &.valid {}
+      }
+    }
+  }
+
+  .front {
+
+    .higher {
+      $width: 80%;
+      width: $width;
+      position: absolute;
+      left: (100% - $width) / 2;
+      top: 30px;
+
+      @media only screen and (max-width : 480px) {
+        width: 90%;
+        left: 5%;
+      }
+
+      .name {
+        font-family: $check-monospace-font-family;
+        font-size: 16px;
+        margin-bottom: 25px;
+        max-height: 45px;
+        top: 0;
+        width: 330px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: horizontal;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .order {
+        text-transform: uppercase;
+        font-family: $check-monospace-font-family;
+        font-size: 12px;
+        margin-bottom: 25px;
+        max-height: 45px;
+        top: 0;
+        width: 330px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: horizontal;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        .ordertext {
+          position: relative;
+          float: left;
+          opacity: 0.5;
+        }
+
+        .orderval {
+          margin-left: 10px;
+          position: relative;
+          float: left;
+        }
+      }
+      .bankname {
+        font-family: $check-monospace-font-family;
+        font-size: 20px;
+        max-height: 45px;
+        width: 330px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: horizontal;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .lower {
+      $width: 80%;
+      width: $width;
+      position: absolute;
+      left: (100% - $width) / 2;
+      bottom: 15px;
+
+      @media only screen and (max-width : 480px) {
+        width: 90%;
+        left: 5%;
+      }
+
+      .account-box {
+        font-family: $check-monospace-font-family;
+        font-size: 24px;
+        /*margin-bottom: 30px;*/
+        width: 135px;
+        position: relative;
+        float: left;
+        padding-left: 25px;
+
+        .label {
+          font-size: 10px;
+          margin-left: auto;
+          margin-right: auto;
+          text-align: center;
+          opacity: 0.5;
+        }
+
+        .accountnumber {
+        }
+      }
+
+      .routing-box {
+        font-family: $check-monospace-font-family;
+        font-size: 24px;
+        /*margin-bottom: 30px;*/
+        width: 120px;
+        position: relative;
+        float: left;
+
+        .label {
+          font-size: 10px;
+          margin-left: auto;
+          margin-right: auto;
+          text-align: center;
+          opacity: 0.5;
+        }
+
+        .routingnumber {
+        }
+      }
+
+      .numbers {
+        padding-top: 12px;
+        float: right;
+        opacity: 0.3;
+      }
+    }
+  }
+}
