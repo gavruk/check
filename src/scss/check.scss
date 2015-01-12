@@ -129,7 +129,7 @@ $check-transition-time: 400ms;
         .ordertext {
           position: relative;
           float: left;
-          opacity: 0.5;
+          opacity: 1;
         }
 
         .orderval {
@@ -152,7 +152,7 @@ $check-transition-time: 400ms;
     }
 
     .lower {
-      $width: 80%;
+      $width: 90%;
       width: $width;
       position: absolute;
       left: (100% - $width) / 2;
@@ -166,18 +166,19 @@ $check-transition-time: 400ms;
       .account-box {
         font-family: $check-monospace-font-family;
         font-size: 24px;
-        /*margin-bottom: 30px;*/
-        width: 135px;
+        width: 40%;
         position: relative;
         float: left;
         padding-left: 25px;
+        text-align: center;
 
         .label {
-          font-size: 10px;
+          font-size: 14px;
           margin-left: auto;
           margin-right: auto;
           text-align: center;
-          opacity: 0.5;
+          opacity: 0.7;
+          margin: 3px;
         }
 
         .accountnumber {
@@ -187,17 +188,18 @@ $check-transition-time: 400ms;
       .routing-box {
         font-family: $check-monospace-font-family;
         font-size: 24px;
-        /*margin-bottom: 30px;*/
-        width: 120px;
+        width: 40%;
         position: relative;
         float: left;
+        text-align: center;
 
         .label {
-          font-size: 10px;
+          font-size: 14px;
           margin-left: auto;
           margin-right: auto;
           text-align: center;
-          opacity: 0.5;
+          opacity: 0.7;
+          margin: 3px;
         }
 
         .routingnumber {
@@ -207,7 +209,7 @@ $check-transition-time: 400ms;
       .numbers {
         padding-top: 12px;
         float: right;
-        opacity: 0.3;
+        opacity: 0.5;
       }
     }
   }

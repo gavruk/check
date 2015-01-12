@@ -99,6 +99,7 @@ class Check
     @$accountNumberInput
       .bindVal @$accountNumberDisplay,
         fill: false,
+        filters: @accountNumberFilter
       .on 'keydown', @handle('captureAccountNumber')
     @$routingNumberInput
       .bindVal @$routingNumberDisplay,
@@ -116,6 +117,13 @@ class Check
         fill: false
         join: ' '
       .on 'keydown', @handle('captureName')
+
+  accountNumberFilter: (val, $el) ->
+      if val.length <= 10
+          return val
+      beg = val.substring(0, 3)
+      end = val.substring(val.length - 4)
+      return beg + '...' + end
 
   handleInitialValues: ->
     $.each @options.formSelectors, (name, selector) =>
@@ -156,8 +164,8 @@ class Check
       if !@isKeyAllowedForNumber(e)
         e.preventDefault()
         return
-      if val.length == maxLength and !@isSpecialKey(e)
-        e.preventDefault()
+      #if val.length == maxLength and !@isSpecialKey(e)
+        #e.preventDefault()
     captureRoutingNumber: ($el, e) ->
       val = $el.val()
       maxLength = 9

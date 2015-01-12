@@ -112,7 +112,7 @@
       .check .front .higher .order .ordertext {
         position: relative;
         float: left;
-        opacity: 0.5; }
+        opacity: 1; }
       .check .front .higher .order .orderval {
         margin-left: 10px;
         position: relative;
@@ -127,9 +127,9 @@
       overflow: hidden;
       text-overflow: ellipsis; }
   .check .front .lower {
-    width: 80%;
+    width: 90%;
     position: absolute;
-    left: 10%;
+    left: 5%;
     bottom: 15px; }
     @media only screen and (max-width: 480px) {
       .check .front .lower {
@@ -138,31 +138,33 @@
     .check .front .lower .account-box {
       font-family: "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
       font-size: 24px;
-      /*margin-bottom: 30px;*/
-      width: 135px;
+      width: 40%;
       position: relative;
       float: left;
-      padding-left: 25px; }
+      padding-left: 25px;
+      text-align: center; }
       .check .front .lower .account-box .label {
-        font-size: 10px;
+        font-size: 14px;
         margin-left: auto;
         margin-right: auto;
         text-align: center;
-        opacity: 0.5; }
+        opacity: 0.7;
+        margin: 3px; }
     .check .front .lower .routing-box {
       font-family: "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
       font-size: 24px;
-      /*margin-bottom: 30px;*/
-      width: 120px;
+      width: 40%;
       position: relative;
-      float: left; }
+      float: left;
+      text-align: center; }
       .check .front .lower .routing-box .label {
-        font-size: 10px;
+        font-size: 14px;
         margin-left: auto;
         margin-right: auto;
         text-align: center;
-        opacity: 0.5; }
+        opacity: 0.7;
+        margin: 3px; }
     .check .front .lower .numbers {
       padding-top: 12px;
       float: right;
-      opacity: 0.3; }
+      opacity: 0.5; }
