@@ -13,29 +13,3 @@ $modules: () !default;
     content: " ";
     display: block;
 }
-
-@mixin check-texture() {
-    $b1: rgba(255, 0, 0, 0);
-    $b2: opacify($b1, .03);
-    $b3: opacify($b1, .04);
-    $b4: opacify($b1, .05);
-
-    @include background-image(
-        repeating-radial-gradient(circle at 30% 30%,
-            $b1 1px, $b2 10px,
-            $b3 3px, $b4 4px
-        ),
-        repeating-radial-gradient(circle at 70% 70%,
-            $b1 1px, $b2 10px,
-            $b3 3px, $b4 4px
-        ),
-        repeating-radial-gradient(circle at 30% 70%,
-            $b1 1px, $b2 10px,
-            $b3 3px, $b4 4px
-        ),
-        repeating-radial-gradient(circle at 70% 30%,
-            $b1 1px, $b2 10px,
-            $b3 3px, $b4 4px
-        )
-    );
-}

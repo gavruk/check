@@ -29,6 +29,7 @@ $check-transition-time: 400ms;
   min-width: 315px;
   border-radius: $check-border-radius;
   box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  background: #FFF;
 
 
   & > *, & > *:before, & > *:after {
@@ -43,20 +44,17 @@ $check-transition-time: 400ms;
     @include backface-visibility(hidden);
     @include transform-style(preserve-3d);
     @include transition(all $check-transition-time linear);
-    width: 100%;
-    height: 100%;
+    width: 98%;
+    height: 96%;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 2%;
+    left: 1%;
     overflow: hidden;
     border-radius: $check-border-radius;
-    background: #DDD;
-    background-color: #FFF;
-    /*background-color: rgba(0, 0, 0, 0.5);*/
+    background: #DDD url('../img/bg-check.jpg') 0 0;
 
     &:before {
       @include transition(all $check-transition-time ease);
-      @include check-texture();
       @include shape();
       position: absolute;
       width: 100%;
@@ -75,7 +73,7 @@ $check-transition-time: 400ms;
     .display {
       color: $check-font-color;
       font-weight: normal;
-      opacity: 0.5;
+      opacity: 0.7;
       @include transition(opacity $check-transition-time linear);
       &.focused {
         opacity: 1;
@@ -116,7 +114,7 @@ $check-transition-time: 400ms;
         text-transform: uppercase;
         font-family: $check-monospace-font-family;
         font-size: 12px;
-        margin-bottom: 25px;
+        margin-bottom: 14px;
         max-height: 45px;
         top: 0;
         width: 330px;
@@ -140,7 +138,8 @@ $check-transition-time: 400ms;
       }
       .bankname {
         font-family: $check-monospace-font-family;
-        font-size: 20px;
+        font-size: 24px;
+        font-weight: bold;
         max-height: 45px;
         width: 330px;
         display: -webkit-box;
@@ -209,7 +208,7 @@ $check-transition-time: 400ms;
       .numbers {
         padding-top: 12px;
         float: right;
-        opacity: 0.5;
+        opacity: 0.7;
       }
     }
   }
